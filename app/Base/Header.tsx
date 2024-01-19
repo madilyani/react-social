@@ -114,16 +114,20 @@ export default function Header() {
                 {homeIcon}
                 Home
               </Link>
-              <Link
-                href="/join"
-                className={
-                  "header__inner-link pc " +
-                  (pathname === "/join" ? "active" : "")
-                }
-                onClick={() => setActive(false)}
-              >
-                Join
-              </Link>
+              {!logged ? (
+                ""
+              ) : (
+                <Link
+                  href="/join"
+                  className={
+                    "header__inner-link pc " +
+                    (pathname === "/join" ? "active" : "")
+                  }
+                  onClick={() => setActive(false)}
+                >
+                  Join
+                </Link>
+              )}
               <Link
                 href="/profile"
                 className={

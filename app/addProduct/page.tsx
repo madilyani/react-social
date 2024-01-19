@@ -8,23 +8,19 @@ import Link from "next/link";
 const reqList = [
   {
     id: "1",
-    text: "Only images that include people/person/part of a person",
+    text: "-Only images that include a person or part of a person merged with a product are accepted.",
   },
   {
     id: "2",
-    text: "only one product are allowed",
+    text: "Respect the property of other people.",
   },
   {
     id: "3",
-    text: "Only High Quality Image",
+    text: "No overly erotic images will be accepted.",
   },
   {
     id: "4",
-    text: "Respect the Property of Other People",
-  },
-  {
-    id: "5",
-    text: "only more than 300 DP",
+    text: "Only high-quality images will be accepted in 9:16 format with a minimum resolution of 2160x3840 pixels. With good lighting.",
   },
 ];
 export default function page() {
