@@ -54,11 +54,17 @@
   }
   @include header-xlg-xxlg;
   // base end
+  // post start
+  @include post-xlg-xxlg;
+  // post end
 }
 // 700px
 @include sm-md {
   .main {
     padding-top: 0;
+    min-height: unset;
   }
   @include header-sm-md;
+  @include footer-sm-md;
+  @include post-sm-md;
 }

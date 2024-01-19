@@ -4,7 +4,12 @@
   &__inner {
     text-align: center;
     p {
-      color: #665F5F;
+      color: #665f5f;
     }
+  }
+}
+@mixin footer-sm-md {
+  .footer {
+    display: none;
   }
 }
