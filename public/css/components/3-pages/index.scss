@@ -198,7 +198,36 @@
     }
   }
 }
-
+.centered {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 0;
+    .back {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(218, 218, 218, 0.25);
+      border: solid 0.5px rgba(255, 255, 255, 0.33);
+      backdrop-filter: blur(4px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      color: $black;
+      justify-content: center;
+      position: absolute;
+      z-index: 10;
+      top: 20px;
+      left: 20px;
+      svg {
+        width: 19px;
+        height: 19px;
+      }
+    }
+  }
+}
 @mixin post-xlg-xxlg {
   .post {
     &__inner {
@@ -210,6 +239,29 @@
   }
 }
 @mixin post-sm-md {
+  .centered {
+    &__inner {
+      .back {
+        color: $white;
+      }
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      scroll-snap-type: y mandatory;
+      width: 100%;
+      -ms-overflow-style: none;
+      flex-direction: column;
+      scrollbar-width: none;
+      height: 100%;
+      padding: 0 !important;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
   .post {
     padding: 0;
     .auto__container {

@@ -175,7 +175,11 @@ export default function Header() {
                         </Link>
                         <hr />
 
-                        <Link href="" onClick={() => setActive(false)}>
+                        <Link
+                          target="_blank"
+                          href="https://www.instagram.com/nicoinblack"
+                          onClick={() => setActive(false)}
+                        >
                           {instagramIcon} Follow the Founder{" "}
                         </Link>
                         <hr />

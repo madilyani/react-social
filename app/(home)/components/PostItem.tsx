@@ -1,11 +1,4 @@
-import {
-  eye,
-  globeIcon,
-  plusIcon,
-  shareIcon,
-  starIcon,
-  userIcon,
-} from "@/app/Base/SVG";
+import { eye, globeIcon, plusIcon, starIcon, userIcon } from "@/app/Base/SVG";
 import Link from "next/link";
 import React, { useRef } from "react";
 import Share from "./Share";
@@ -39,7 +32,7 @@ export default function PostItem(props: {
       onClick={onClick}
     >
       <div className="postItem__image">
-        <img src={props.image} alt="" />
+        <img src={props?.image} alt="" />
       </div>
       <div className="postItem__inner">
         <div className="postItem__btns">
@@ -49,9 +42,9 @@ export default function PostItem(props: {
           </button>
           <Share
             wrapper={wrapper}
-            imageUrl={props.image}
-            id={props.id}
-            name={props.title}
+            imageUrl={props?.image}
+            id={props?.id}
+            name={props?.title}
           />
           {/* <button type="button" className="postItem__btn">
             <span>{shareIcon}</span>
@@ -70,25 +63,25 @@ export default function PostItem(props: {
           <div className="postItem__info-head">
             <div className="postItem__info-content">
               <div className="postItem__info-avatar">
-                <img src={props.avatar} alt="avatar" />
+                <img src={props?.avatar} alt="avatar" />
               </div>
               <div className="postItem__info-gen">
                 <h6 className="sm">
-                  <Link href="/user">{props.user}</Link> {props.prof}
+                  <Link href="/user">{props?.user}</Link> {props?.prof}
                 </h6>
                 <p className="sm">
-                  {eye} {props.views} Views
+                  {eye} {props?.views} Views
                 </p>
               </div>
             </div>
             <div className="postItem__info-tags">
-              <span>{props.price}$</span>
-              <Link href={props.link}>{globeIcon} Visit</Link>
+              <span>{props?.price}$</span>
+              <Link href={props?.link}>{globeIcon} Visit</Link>
             </div>
           </div>
           <div className="postItem__info-body">
-            <h4>{props.title}</h4>
-            <p>{props.desc}</p>
+            <h4>{props?.title}</h4>
+            <p>{props?.desc}</p>
           </div>
         </div>
       </div>

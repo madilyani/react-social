@@ -1,7 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PostItem from "@/app/(home)/components/PostItem";
 import { postList } from "@/app/Base/Modul";
+import Link from "next/link";
+import { chevronLeft } from "@/app/Base/SVG";
 export default function Page({ params }: { params: { id: string } }) {
   const [isActive, setIsActive] = useState<any>(false);
   const [itemData, setItemData] = useState<any>(null);
@@ -13,7 +15,20 @@ export default function Page({ params }: { params: { id: string } }) {
 
   return (
     <div className="centered">
-      <PostItem {...itemData} isActive={isActive} setIsActive={setIsActive} />
+      <div className="auto__container">
+        <div className="centered__inner">
+          <Link className="back" href="/">
+            {chevronLeft}
+          </Link>
+          {itemData && (
+            <PostItem
+              {...itemData}
+              isActive={isActive}
+              setIsActive={setIsActive}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 }
