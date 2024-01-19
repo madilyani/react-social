@@ -21,9 +21,19 @@ export default function PostItem(props: {
   link: string;
   title: string;
   desc: string;
+  isActive: any;
+  setIsActive: any;
 }) {
   return (
-    <div className="postItem">
+    <div
+      className={"postItem " + (props.isActive === props.id ? "mobActive" : "")}
+      onClick={() => {
+        if (props.isActive === props.id) props.setIsActive(null);
+        else {
+          props.setIsActive(props.id);
+        }
+      }}
+    >
       <div className="postItem__image">
         <img src={props.image} alt="" />
       </div>
