@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { TouchEvent, useEffect, useRef, useState } from "react";
 import {
   homeIcon,
   instagramIcon,
@@ -18,6 +18,8 @@ import SignUp from "./SignUp";
 export default function Header() {
   const [modal, setModal] = useState<string | null>(null);
   const [logged, setLogged] = useState<boolean>(true);
+  const [xDown, setXDown] = useState<any>(null);
+  const [yDown, setYDown] = useState<any>(null);
   const [active, setActive] = useState(false);
   const [headerMob, setHeaderMob] = useState(false);
   const wrapper = useRef<any>(null);
@@ -35,29 +37,63 @@ export default function Header() {
   useEffect(() => {
     setActive(false);
   }, [pathname]);
-  useEffect(() => {
-    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+  // useEffect(() => {
+  //   const scrollable = document.getElementById("scrollable");
 
-    window.addEventListener(
-      "scroll",
-      function handleScroll() {
-        const scrollTopPosition =
-          window.scrollY || document.documentElement.scrollTop;
+  //   function handleTouchStart(e: TouchEvent<HTMLDivElement>) {
+  //     setXDown(e.targetTouches[0].clientX);
+  //     setYDown(e.targetTouches[0].clientY);
+  //   }
+  //   function handleTouchMove(e: any) {
+  //     if (!xDown || !yDown) {
+  //       return;
+  //     }
 
-        if (scrollTopPosition > lastScrollTop) {
-          setHeaderMob(true);
-        } else if (scrollTopPosition < lastScrollTop) {
-          setHeaderMob(false);
-        }
-        lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
-      },
-      false
-    );
-  }, []);
+  //     var xUp = e.originalEvent.touches[0].clientX;
+  //     var yUp = e.originalEvent.touches[0].clientY;
+
+  //     var xDiff = xDown - xUp;
+  //     var yDiff = yDown - yUp;
+
+  //     if (Math.abs(xDiff) > Math.abs(yDiff)) {
+  //       /*most significant*/
+  //       if (xDiff > 0) {
+  //         /* left swipe */
+  //       } else {
+  //         /* right swipe */
+  //       }
+  //     } else {
+  //       if (yDiff > 0) {
+  //         /* up swipe */
+  //         console.log("up");
+  //       } else {
+  //         /* down swipe */
+  //         console.log("down");
+  //       }
+  //     }
+  //     /* reset values */
+  //     setXDown(null);
+  //     setYDown(null);
+  //   }
+  //   scrollable?.addEventListener("touchstart", handleTouchStart, false);
+  //   document?.addEventListener("touchmove", handleTouchMove, false);
+  //   // scrollable?.addEventListener("touchmove", function (e) {
+  //   //   console.log(e.target); // the element that was swiped
+  //   //   setHeaderMob(false);
+  //   // });
+  //   // scrollable?.addEventListener("swiped-down", function (e) {
+  //   //   console.log(e.target); // the element that was swiped
+  //   //   setHeaderMob(true);
+  //   // });
+  // }, []);
 
   return (
     <>
-      <header className={"header " + (headerMob ? "active" : "")} ref={wrapper}>
+      <header
+        className={"header " + (headerMob ? "active" : "")}
+        ref={wrapper}
+        id="header"
+      >
         <div className="auto__container">
           <div className="header__inner">
             <div className="header__inner-row">
