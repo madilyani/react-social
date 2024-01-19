@@ -40,25 +40,39 @@ export default function page() {
   };
   console.log("form", form);
   return (
-    <div className="addProduct">
-      <div className="auto__container">
-        <div className="addProduct__inner">
-          <div className="upload__row"> 
-            <Upload />
-            <div className="upload__list">
-              {reqList.map((item: any, index: number) => {
-                return (
-                  <div className="upload__list-item" key={index}>
-                    {tickIcon} {item.text}
-                  </div>
-                );
-              })}
+    <>
+      <div className="upHeader">
+        <div className="auto__container">
+          <div className="upHeader__inner">
+            <Link href="/" className="back">
+              {chevronLeft}
+            </Link>
+            <div className="upHeader__inner-logo">
+              <img src="/images/logoWhite.svg" alt="" />
             </div>
           </div>
-          <More />
-          <General />
         </div>
       </div>
-    </div>
+      <div className="addProduct">
+        <div className="auto__container">
+          <div className="addProduct__inner">
+            <div className="upload__row">
+              <Upload form={form} updateForm={updateForm} />
+              <div className="upload__list">
+                {reqList.map((item: any, index: number) => {
+                  return (
+                    <div className="upload__list-item" key={index}>
+                      {tickIcon} {item.text}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <More />
+            <General form={form} updateForm={updateForm} />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
