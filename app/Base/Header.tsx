@@ -10,7 +10,7 @@ import SignUp from "./SignUp";
 
 export default function Header() {
   const [modal, setModal] = useState<string | null>(null);
-  const [logged, setLogged] = useState<boolean>(false);
+  const [logged, setLogged] = useState<boolean>(true);
   const [active, setActive] = useState(false);
   const wrapper = useRef<any>(null);
   useEffect(() => {

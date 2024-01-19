@@ -662,7 +662,6 @@ p.sm {
   position: relative;
   z-index: 2;
   padding-top: 120px;
-  opacity: 0;
   -webkit-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
   -moz-transition: all 0.2s ease-in-out 0s;
