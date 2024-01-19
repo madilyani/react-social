@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Upload from "./components/Upload";
 import { tickIcon } from "../Base/SVG";
 import More from "./components/More";
@@ -19,7 +19,7 @@ const reqList = [
   },
   {
     id: "4",
-    text: "Respect the Property of Other People", 
+    text: "Respect the Property of Other People",
   },
   {
     id: "5",
@@ -27,12 +27,23 @@ const reqList = [
   },
 ];
 export default function page() {
+  const [form, setForm] = useState<any>({
+    image: "",
+    title: "",
+    description: "",
+    price: "",
+    link: "",
+  });
+  const updateForm = (data: any) => {
+    setForm((form: any) => ({ ...form, ...data }));
+  };
+  console.log("form", form);
   return (
     <div className="addProduct">
       <div className="auto__container">
         <div className="addProduct__inner">
-          <div className="upload__row"> 
-            <Upload />
+          <div className="upload__row">
+            <Upload form={form} updateForm={updateForm} />
             <div className="upload__list">
               {reqList.map((item: any, index: number) => {
                 return (
@@ -44,7 +55,7 @@ export default function page() {
             </div>
           </div>
           <More />
-          <General />
+          <General form={form} updateForm={updateForm} />
         </div>
       </div>
     </div>

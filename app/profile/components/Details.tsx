@@ -1,7 +1,22 @@
 import { linktrIcon } from "@/app/Base/SVG";
-import React from "react";
+import React, { useState } from "react";
 
-export default function Details() {
+export default function Details({
+  form,
+  updateForm,
+}: {
+  form: any;
+  updateForm: any;
+}) {
+  const [pos, setPos] = useState<any>({
+    username: form.username,
+    email: form.email,
+    description: form.description,
+    productLink: form.productLink,
+  });
+  const updatePos = (data: any) => {
+    setPos((pos: any) => ({ ...pos, ...data }));
+  };
   return (
     <>
       <h3>Profile Details</h3>
@@ -9,13 +24,21 @@ export default function Details() {
         <div className="input__outer">
           <label htmlFor="">User Name</label>
           <div className="input">
-            <input type="text" value="Amelia_D" />
+            <input
+              type="text"
+              value={pos.username}
+              onChange={(e) => updatePos({ username: e.target.value })}
+            />
           </div>
         </div>
         <div className="input__outer">
           <label htmlFor="">Email</label>
           <div className="input ">
-            <input type="email" value="ameliad45@gmail.com" />
+            <input
+              type="email"
+              value={pos.email}
+              onChange={(e) => updatePos({ email: e.target.value })}
+            />
           </div>
         </div>
         <div className="input__outer">
@@ -24,7 +47,8 @@ export default function Details() {
               name=""
               id=""
               rows={4}
-              value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation . "
+              value={pos.description}
+              onChange={(e) => updatePos({ description: e.target.value })}
             ></textarea>
           </div>
         </div>
@@ -33,12 +57,30 @@ export default function Details() {
           <div className="input input--link">
             <input
               type="text"
-              value="https://www.pexels.com/photo/two-young-men-standing-back-to-back-in-front-of-an-apartment-building-in-city-18035289/"
+              value={pos.productLink}
+              onChange={(e) => updatePos({ productLink: e.target.value })}
             />
             <span>{linktrIcon}</span>
           </div>
         </div>
-        <button type="button" className="button publish">
+        <button
+          type="button"
+          className="button publish"
+          disabled={
+            pos.username === "" ||
+            pos.email === "" ||
+            pos.description === "" ||
+            pos.productLink === ""
+          }
+          onClick={() =>
+            updateForm({
+              username: pos.username,
+              email: pos.email,
+              description: pos.description,
+              productLink: pos.productLink,
+            })
+          }
+        >
           Save Changes
         </button>
       </div>

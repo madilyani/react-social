@@ -41,7 +41,11 @@ export default function Header() {
         <div className="auto__container">
           <div className="header__inner">
             <div className="header__inner-row">
-              <Link href="/" className="header__inner-logo">
+              <Link
+                href="/"
+                className="header__inner-logo"
+                onClick={() => setActive(false)}
+              >
                 <img src="/images/logo.svg" alt="" />
               </Link>
               <Link
@@ -49,6 +53,7 @@ export default function Header() {
                 className={
                   "header__inner-link " + (pathname === "/" ? "active" : "")
                 }
+                onClick={() => setActive(false)}
               >
                 {homeIcon}
                 Home
@@ -59,6 +64,7 @@ export default function Header() {
                   "header__inner-link pc " +
                   (pathname === "/join" ? "active" : "")
                 }
+                onClick={() => setActive(false)}
               >
                 Join
               </Link>
@@ -68,13 +74,18 @@ export default function Header() {
                   "header__inner-link mob " +
                   (pathname === "/profile" ? "active" : "")
                 }
+                onClick={() => setActive(false)}
               >
                 {userSolid}
                 Profile
               </Link>
             </div>
             <div className="header__inner-row">
-              <Link href="/addProduct" className="button light">
+              <Link
+                href="/addProduct"
+                className="button light"
+                onClick={() => setActive(false)}
+              >
                 {plusIcon} <span> Add Product & Person</span>
               </Link>
               <div className="userPop">
@@ -99,10 +110,14 @@ export default function Header() {
                         exit={{ opacity: 0 }}
                         className="userPop__menu"
                       >
-                        <Link href="/profile">{userIcon} profile </Link>
+                        <Link href="/profile" onClick={() => setActive(false)}>
+                          {userIcon} profile{" "}
+                        </Link>
                         <hr />
 
-                        <Link href="">{instagramIcon} Follow the Founder </Link>
+                        <Link href="" onClick={() => setActive(false)}>
+                          {instagramIcon} Follow the Founder{" "}
+                        </Link>
                         <hr />
                         <button
                           type="button"

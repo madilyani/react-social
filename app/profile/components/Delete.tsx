@@ -1,7 +1,8 @@
 import { noteIcon } from "@/app/Base/SVG";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Delete() {
+  const [terms, setTerms] = useState(false);
   return (
     <>
       <h3>Delete Account</h3>
@@ -14,10 +15,14 @@ export default function Delete() {
           </h6>
         </div>
         <div className="check">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={terms}
+            onChange={(e) => setTerms(e.target.checked)}
+          />
           <label htmlFor="">I understand the consequences.</label>
         </div>
-        <button type="button" className="button publish">
+        <button type="button" className="button publish" disabled={!terms}>
           Delete Account
         </button>
       </div>
