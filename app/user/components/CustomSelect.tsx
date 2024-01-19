@@ -56,7 +56,7 @@ const CustomSelect = ({
   return (
     <div className="customSelect" ref={wrapper}>
       <div
-        className={"customSelect__selected" + (active ? "active" : "")}
+        className={"customSelect__selected " + (active ? "active" : "")}
         onClick={toggleActive}
       >
         {currentSelected ? currentSelected.value : "---"}
