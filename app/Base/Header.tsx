@@ -24,6 +24,10 @@ export default function Header() {
     return () => window.removeEventListener("click", windowClick);
   }, [active]);
   const pathname = usePathname();
+  useEffect(() => {
+    setActive(false);
+  }, [pathname]);
+
   return (
     <>
       <header className="header" ref={wrapper}>
