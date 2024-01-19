@@ -27,9 +27,9 @@ export default function Profile() {
             <Link href="/" className="back">
               {chevronLeft}
             </Link>
-            <div className="upHeader__inner-logo">
+            <Link href="/" className="upHeader__inner-logo">
               <img src="/images/logoWhite.svg" alt="" />
-            </div>
+            </Link>
           </div>
         </div>
       </div>
