@@ -48,6 +48,7 @@ export default function General({
           <div className="input">
             <input
               type="text"
+              placeholder="Product Title"
               value={form.title}
               onChange={(e) => updateForm({ title: e.target.value })}
             />
@@ -60,6 +61,7 @@ export default function General({
               name=""
               id=""
               rows={4}
+              placeholder="Product Description"
               value={form.description}
               onChange={(e) => updateForm({ description: e.target.value })}
             ></textarea>
@@ -72,6 +74,7 @@ export default function General({
             <input
               type="text"
               value={form.price}
+              placeholder="Product Price ($)"
               onChange={(e) =>
                 updateForm({
                   price: formatCurrency(e.target.value, "nonblur"),
@@ -89,6 +92,7 @@ export default function General({
           <div className="input input--link">
             <input
               type="text"
+              placeholder="Product Link"
               value={form.link}
               onChange={(e) => updateForm({ link: e.target.value })}
             />

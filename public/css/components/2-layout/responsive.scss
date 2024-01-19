@@ -88,6 +88,7 @@
   @include more-lg-xlg;
   @include upload-lg-xlg;
   @include profile-lg-xlg;
+  @include user-lg-xlg;
 }
 // 840px
 @include md-lg {
@@ -115,6 +116,7 @@
   @include upload-sm-md;
   @include more-sm-md;
   @include profile-sm-md;
+  @include user-sm-md;
 
   .main {
     padding-top: 0;
@@ -130,4 +132,5 @@
   @include more-xsm-sm;
   @include upload-xsm-sm;
   @include profile-xsm-sm;
+  @include user-xsm-sm;
 }

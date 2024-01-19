@@ -49,26 +49,25 @@ export default function Upload({
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
+      <input type="file" multiple={false} onChange={inputChange} />
+
       <div
         className="upload__inner"
         style={{
-          backgroundColor: isOver ? "#fff6f5" : "white",
+          backgroundColor: isOver ? "#fff" : "fff6f5",
         }}
       >
-        <div className="upload__content">
-          <input type="file" multiple={false} onChange={inputChange} />
-          {form.image ? (
-            <div className="upload__image">
-              <img src={form.image} alt="" />
-            </div>
-          ) : (
-            <>
-              <div className="upload__icon">{imageIcon}</div>
-              <h2 className="sm">Add Product Image</h2>
-              <h4>Press here and add to image</h4>
-            </>
-          )}
-        </div>
+        {form.image ? (
+          <div className="upload__image">
+            <img src={form.image} alt="" />
+          </div>
+        ) : (
+          <div className="upload__content">
+            <div className="upload__icon">{imageIcon}</div>
+            <h2 className="sm">Add Product Image</h2>
+            <h4>Press here and add to image</h4>
+          </div>
+        )}
       </div>
     </div>
   );

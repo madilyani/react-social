@@ -24,6 +24,7 @@ export default function Password({
           <div className="input input--password">
             <input
               type={isShown ? "text" : "password"}
+              placeholder="Your Password"
               value={pos.password}
               onChange={(e) => updatePos({ password: e.target.value })}
             />
@@ -37,6 +38,7 @@ export default function Password({
           <div className="input input--password">
             <input
               type={isShown2 ? "text" : "password"}
+              placeholder="Retype Password"
               value={pos.retype_password}
               onChange={(e) => updatePos({ retype_password: e.target.value })}
             />
