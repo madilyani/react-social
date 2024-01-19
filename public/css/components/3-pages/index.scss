@@ -222,9 +222,28 @@
       height: 100dvh;
       margin: 0;
       border-radius: 0;
+
       &:hover {
+        .postItem__image {
+          img {
+            transform: scale(1);
+          }
+        }
+        .postItem__inner {
+          opacity: 0;
+        }
+      }
+      &.mobActive {
         .postItem__info {
           padding-bottom: 130px;
+        }
+        .postItem__image {
+          img {
+            transform: scale(1.1);
+          }
+        }
+        .postItem__inner {
+          opacity: 1;
         }
       }
       &__inner {

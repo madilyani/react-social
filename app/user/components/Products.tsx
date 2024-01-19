@@ -53,23 +53,21 @@ const sortList = [
 export default function Products() {
   return (
     <div className="product">
-      <div className="auto__container">
-        <div className="product__head">
-          <h2 className="sm">Our Products</h2>
-          <div className="productFilter">
-            <h6>Store By :</h6>
-            <CustomSelect
-              list={sortList}
-              selected={sortList[0]}
-              onChange={() => {}}
-            />
-          </div>
+      <div className="product__head">
+        <h2 className="sm">Our Products</h2>
+        <div className="productFilter">
+          <h6>Store By :</h6>
+          <CustomSelect
+            list={sortList}
+            selected={sortList[0]}
+            onChange={() => {}}
+          />
         </div>
-        <div className="product__inner">
-          {productList.map((item, index) => {
-            return <ProductItem {...item} key={index} />;
-          })}
-        </div>
+      </div>
+      <div className="product__inner">
+        {productList.map((item, index) => {
+          return <ProductItem {...item} key={index} />;
+        })}
       </div>
       <div className="product__inner">
         {productList.map((item, index) => {
