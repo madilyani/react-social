@@ -54,12 +54,68 @@
   }
   @include header-xlg-xxlg;
   // base end
+  // profile start
+  @include profile-xlg-xxlg;
+  // profile end
   // post start
   @include post-xlg-xxlg;
   // post end
+  // post start
+  @include post-xlg-xxlg;
+  // post end
+  // user start
+  @include user-xlg-xxlg;
+  // user end
+  // addProduct start
+  @include addProduct-xlg-xxlg;
+  @include more-xlg-xxlg;
+  @include upload-xlg-xxlg;
+  // addProduct end
+}
+// 1024px
+@include lg-xlg {
+  // base start
+  h2 {
+    font-size: 24px;
+    line-height: 34px;
+    &.sm {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  //   base end
+  @include more-lg-xlg;
+  @include upload-lg-xlg;
+  @include profile-lg-xlg;
+}
+// 840px
+@include md-lg {
+  @include profile-md-lg;
 }
 // 700px
 @include sm-md {
+  // base start
+  h2 {
+    font-size: 18px;
+    line-height: 24px;
+    &.sm {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @include upHeader-sm-md;
+
+  // base end
+  @include addProduct-sm-md;
+  @include upload-sm-md;
+  @include more-sm-md;
+  @include profile-sm-md;
+
   .main {
     padding-top: 0;
     min-height: unset;
@@ -67,4 +123,11 @@
   @include header-sm-md;
   @include footer-sm-md;
   @include post-sm-md;
+}
+// 540px
+@include xsm-sm {
+  @include addProduct-xsm-sm;
+  @include more-xsm-sm;
+  @include upload-xsm-sm;
+  @include profile-xsm-sm;
 }

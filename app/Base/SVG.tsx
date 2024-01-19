@@ -441,3 +441,15 @@ export const userSolid = (
     />
   </svg>
 );
+export const chevronLeft = (
+  <svg viewBox="0 0 20 20" fill="none">
+    <path
+      d="M12.0539 16.0069L6.81465 10.7676C6.1959 10.1489 6.1959 9.13636 6.81465 8.51761L12.0539 3.27832"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
