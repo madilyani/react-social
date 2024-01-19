@@ -16,12 +16,13 @@ export default function General() {
           </div>
         </div>
         <div className="input__outer">
+          <label htmlFor="">Product Description</label>
           <div className="input">
             <textarea name="" id="" rows={4} value=""></textarea>
           </div>
         </div>
         <div className="input__outer">
-          <label htmlFor="">Product Title</label>
+          <label htmlFor="">Product Price ($)</label>
 
           <div className="input input--amount">
             <input type="text" value="150" />
