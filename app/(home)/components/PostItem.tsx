@@ -55,7 +55,7 @@ export default function PostItem(props: {
               </div>
               <div className="postItem__info-gen">
                 <h6 className="sm">
-                  {props.user} {props.prof}
+                  <Link href="/user">{props.user}</Link> {props.prof}
                 </h6>
                 <p className="sm">
                   {eye} {props.views} Views

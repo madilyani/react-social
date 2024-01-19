@@ -129,3 +129,98 @@
     width: calc(100% - 26px);
   }
 }
+@mixin profile-xlg-xxlg {
+  .profile {
+    &Side {
+      width: 360px;
+      margin-right: 20px;
+      &__link {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    &Main {
+      width: calc(100% - 380px);
+    }
+  }
+}
+@mixin profile-lg-xlg {
+  .profile {
+    &Side {
+      width: 240px;
+      &__avatar {
+        &-edit {
+          width: 40px;
+          height: 40px;
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+    &Main {
+      width: calc(100% - 260px);
+    }
+  }
+}
+@mixin profile-md-lg {
+  .profile {
+    &__inner {
+      flex-direction: column;
+    }
+    &Side {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 38px auto;
+      &__avatar {
+        width: 240px;
+        height: 300px;
+        padding: 0;
+        margin: 0 auto 25px auto;
+      }
+    }
+    &Main {
+      width: 100%;
+    }
+  }
+}
+@mixin profile-sm-md {
+  .profile {
+    border-radius: 35px 35px 0px 0px;
+    background: #fff;
+    padding: 40px 0 120px 0;
+    &Main {
+      &__inner {
+        border-radius: 0;
+        border: 0;
+        border-bottom: 1px solid #f4f3f3;
+        padding: 0 0 30px 0;
+        margin: 0 0 30px 0;
+        &:last-child {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          border: 0 !important;
+        }
+        .button {
+          margin: 0 auto;
+          width: 100%;
+          display: block;
+          max-width: 200px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+@mixin profile-xsm-sm {
+  .profile {
+    &Side {
+      max-width: 313px;
+      &__avatar {
+        width: 160px;
+        height: 195px;
+      }
+    }
+  }
+}

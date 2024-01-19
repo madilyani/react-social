@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Upload from "./components/Upload";
-import { tickIcon } from "../Base/SVG";
+import { chevronLeft, tickIcon } from "../Base/SVG";
 import More from "./components/More";
 import General from "./components/General";
+import Link from "next/link";
 const reqList = [
   {
     id: "1",
@@ -42,8 +43,8 @@ export default function page() {
     <div className="addProduct">
       <div className="auto__container">
         <div className="addProduct__inner">
-          <div className="upload__row">
-            <Upload form={form} updateForm={updateForm} />
+          <div className="upload__row"> 
+            <Upload />
             <div className="upload__list">
               {reqList.map((item: any, index: number) => {
                 return (
@@ -55,7 +56,7 @@ export default function page() {
             </div>
           </div>
           <More />
-          <General form={form} updateForm={updateForm} />
+          <General />
         </div>
       </div>
     </div>
