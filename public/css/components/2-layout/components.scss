@@ -30,7 +30,6 @@ h6 {
   }
 }
 p {
-
   &.sm {
     font-size: 14px;
     line-height: 20px;
@@ -210,6 +209,104 @@ p {
       @include transition;
       content: "";
       transform: translateY(-50%) rotate(45deg);
+    }
+  }
+}
+.share {
+  position: relative;
+  &__btn {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #bd93f1;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &.active {
+      background-color: #7d1ec0;
+      opacity: 1;
+      svg {
+        color: $white;
+      }
+    }
+    &:hover {
+      background-color: #7d1ec0;
+      opacity: 1;
+      svg {
+        color: $white;
+      }
+    }
+    svg {
+      width: 40%;
+      height: 42%;
+      color: #292d32;
+      transition: 0.3s ease;
+      margin-right: 5px;
+    }
+  }
+  &__menu {
+    position: absolute;
+    top: 100%;
+    right: -24px;
+    min-width: 210px;
+    padding: 18px 20px;
+    border-radius: 20px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 50px 95px 135px rgba(122, 119, 137, 0.44);
+    background-color: $white;
+    box-sizing: border-box;
+    margin-top: 20px;
+    flex-direction: column;
+    z-index: 3;
+    display: flex;
+    &::before {
+      position: absolute;
+      bottom: 100%;
+      right: 42px;
+      width: 16px;
+      height: 16px;
+      border-top: 1px solid #d9d9d9;
+      border-right: 1px solid #d9d9d9;
+      border-top-right-radius: 4px;
+      content: "";
+      transform: translateY(7px) rotate(-45deg);
+      background-color: $white;
+    }
+
+    a,
+    button {
+      font-size: 16px !important;
+      line-height: 120% !important;
+      color: #212529 !important;
+      font-weight: 500 !important;
+      margin-bottom: 15px !important;
+      display: flex !important;
+      align-items: center;
+      text-transform: capitalize;
+      &:hover {
+        opacity: 0.8;
+      }
+      &:last-child {
+        margin: 0;
+      }
+      span {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 8px;
+        svg {
+          width: 100%;
+          height: 100%;
+          color: $white;
+        }
+      }
     }
   }
 }

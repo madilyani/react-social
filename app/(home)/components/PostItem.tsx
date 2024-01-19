@@ -8,8 +8,10 @@ import {
 } from "@/app/Base/SVG";
 import Link from "next/link";
 import React from "react";
+import Share from "./Share";
 
 export default function PostItem(props: {
+  id: string;
   image: string;
   avatar: string;
   user: string;
@@ -31,10 +33,11 @@ export default function PostItem(props: {
             <span>{starIcon}</span>
             Like Product
           </button>
-          <button type="button" className="postItem__btn">
+          <Share imageUrl={props.image} id={props.id} name={props.title} />
+          {/* <button type="button" className="postItem__btn">
             <span>{shareIcon}</span>
             Share
-          </button>
+          </button> */}
           <button type="button" className="postItem__btn">
             <span>{userIcon}</span>
             Like Person
