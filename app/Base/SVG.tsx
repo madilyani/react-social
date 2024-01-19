@@ -403,3 +403,41 @@ export const globeIcon = (
     />
   </svg>
 );
+export const homeIcon = (
+  <svg viewBox="0 0 23 22" fill="none">
+    <path
+      d="M8.76801 2.60364L3.82717 6.45364C3.00217 7.09531 2.33301 8.46114 2.33301 9.49698V16.2895C2.33301 18.4161 4.06551 20.1578 6.19217 20.1578H16.8072C18.9338 20.1578 20.6663 18.4161 20.6663 16.2986V9.62531C20.6663 8.51614 19.9238 7.09531 19.0163 6.46281L13.3513 2.49365C12.068 1.59531 10.0055 1.64115 8.76801 2.60364Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.5 16.4912V13.7412"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const userSolid = (
+  <svg viewBox="0 0 22 22" fill="none">
+    <path
+      d="M11.1473 9.96091C11.0557 9.95174 10.9457 9.95174 10.8448 9.96091C8.66316 9.88758 6.93066 8.10008 6.93066 5.90008C6.93066 3.65424 8.74566 1.83008 11.0007 1.83008C13.2465 1.83008 15.0707 3.65424 15.0707 5.90008C15.0615 8.10008 13.329 9.88758 11.1473 9.96091Z"
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.56219 13.3499C4.34385 14.8349 4.34385 17.2549 6.56219 18.7308C9.08302 20.4174 13.2172 20.4174 15.738 18.7308C17.9564 17.2458 17.9564 14.8258 15.738 13.3499C13.2264 11.6724 9.09219 11.6724 6.56219 13.3499Z"
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

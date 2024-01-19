@@ -1,5 +1,6 @@
 .post {
   padding: 40px 0;
+  display: none;
   &__inner {
     max-width: 1240px;
     margin: 0 auto;
@@ -40,7 +41,7 @@
       position: relative;
       z-index: 2;
       padding-top: 120px;
-    //   opacity: 0;
+      //   opacity: 0;
       @include transition;
       &::before {
         position: absolute;

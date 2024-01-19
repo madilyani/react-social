@@ -32,6 +32,12 @@
       display: block;
       text-transform: uppercase;
       margin-right: 12px;
+      svg {
+        display: none;
+      }
+      &.mob {
+        display: none;
+      }
       &:last-child {
         margin-right: 0;
       }
@@ -45,6 +51,150 @@
       align-items: center;
       .userPop {
         margin-left: 12px;
+      }
+    }
+  }
+  .button {
+    svg {
+      display: none;
+    }
+  }
+}
+@mixin header-xlg-xxlg {
+  .header {
+    padding: 12px 0;
+    &__inner {
+      &-logo {
+        width: 100px;
+        margin-right: 25px;
+      }
+      &-link {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 10px 16px;
+      }
+    }
+  }
+}
+@mixin header-sm-md {
+  .header {
+    position: fixed;
+    top: unset;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 20;
+    filter: drop-shadow(0px 35px 80px rgba(128, 145, 171, 0.89));
+    &::before {
+      width: 30%;
+      background: $white;
+      top: 0;
+      left: 0;
+      height: 100%;
+      position: absolute;
+      content: "";
+    }
+    &::after {
+      width: 30%;
+      background: $white;
+      right: 0;
+      top: 0;
+      height: 100%;
+      position: absolute;
+      content: "";
+      z-index: -1;
+    }
+    &__inner {
+      z-index: 21;
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        @include transformX;
+        width: 390px;
+        height: 100%;
+        content: "";
+        background: url(../images/shape.svg);
+        background-size: 100% 100%;
+      }
+    }
+    &__inner {
+      &-row {
+        width: 0;
+        justify-content: space-between;
+        &:first-child {
+          width: 100%;
+        }
+      }
+      &-link {
+        flex-direction: column;
+        display: flex;
+        width: 75px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 3;
+        padding: 0;
+        height: 75px;
+        border-top: 2px solid transparent;
+        border-radius: 0;
+        color: #696e81;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0;
+        &.active {
+          background: linear-gradient(
+            180.56deg,
+            rgba(255, 186, 174, 0.32) 0.49%,
+            rgba(255, 186, 174, 0) 54.45%
+          );
+          border-top: 2px solid $primary;
+          color: $primary;
+          svg {
+            color: $primary;
+          }
+        }
+        &.pc {
+          display: none;
+        }
+        &.mob {
+          display: flex;
+        }
+        svg {
+          display: inline-block;
+          color: #888f98;
+          width: 22px;
+          height: 22px;
+          margin-bottom: 8px;
+        }
+      }
+      &-logo {
+        display: none;
+      }
+      .userPop {
+        display: none;
+      }
+    }
+    .button {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      @include transformX;
+      width: 60px;
+      padding: 0;
+      height: 60px;
+      display: flex;
+      opacity: 1 !important;
+      align-items: center;
+      justify-content: center;
+      span {
+        display: none;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+        display: block;
+        color: $white;
       }
     }
   }

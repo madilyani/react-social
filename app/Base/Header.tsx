@@ -1,6 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { instagramIcon, logOutIcon, userIcon } from "./SVG";
+import {
+  homeIcon,
+  instagramIcon,
+  logOutIcon,
+  plusIcon,
+  userIcon,
+  userSolid,
+} from "./SVG";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -39,20 +46,32 @@ export default function Header() {
                   "header__inner-link " + (pathname === "/" ? "active" : "")
                 }
               >
+                {homeIcon}
                 Home
               </Link>
               <Link
                 href="/join"
                 className={
-                  "header__inner-link " + (pathname === "/join" ? "active" : "")
+                  "header__inner-link pc " +
+                  (pathname === "/join" ? "active" : "")
                 }
               >
                 Join
               </Link>
+              <Link
+                href="/profile"
+                className={
+                  "header__inner-link mob " +
+                  (pathname === "/profile" ? "active" : "")
+                }
+              >
+                {userSolid}
+                Profile
+              </Link>
             </div>
             <div className="header__inner-row">
               <Link href="/addProduct" className="button light">
-                Add Product & Person
+                {plusIcon} <span> Add Product & Person</span>
               </Link>
               <div className="userPop">
                 <div

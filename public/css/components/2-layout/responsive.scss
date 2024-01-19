@@ -1,0 +1,64 @@
+// 1280px
+@include xlg-xxlg {
+  // base start
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+    &.sm {
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  h4 {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  h6 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .auto__container {
+    padding: 0 20px;
+  }
+  .button {
+    &.light {
+      font-size: 14px;
+      line-height: 20px;
+      padding: 10px 25px;
+    }
+  }
+  .userPop {
+    &__menu {
+      min-width: 200px;
+      a,
+      button {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    &__btn {
+      width: 40px;
+      height: 40px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .main {
+    padding-top: 65px;
+  }
+  @include header-xlg-xxlg;
+  // base end
+}
+// 700px
+@include sm-md {
+  .main {
+    padding-top: 0;
+  }
+  @include header-sm-md;
+}
