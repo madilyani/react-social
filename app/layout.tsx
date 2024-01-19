@@ -5,29 +5,25 @@ import Footer from "./Base/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
-  title: "Cary",
-  description:
-    "Cary is a platform for discovering the best new products, brands, and influencers in fashion and beauty.",
+  title: "Social",
+  description: "Description for social.",
   openGraph: {
-    title: "Cary facebook",
-    description:
-      "Cary is a platform for discovering the best new products, brands, and influencers in fashion and beauty.",
+    title: "Social facebook",
+    description: "Description for social.",
     images: [
       {
-        url: "https://cary.arealglam.com/images/logo.png",
+        url: "https://react-social-kappa.vercel.app/logo.svg",
         width: 800,
         height: 600,
-        alt: "Cary",
+        alt: "Social",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@NicoTery39168",
-    title: "Cary",
-    description:
-      "Cary is a platform for discovering the best new products, brands, and influencers in fashion and beauty.",
-    image: "https://cary.arealglam.com/images/logo.png",
+    title: "Social",
+    description: "Description for social.",
+    image: "https://react-social-kappa.vercel.app/logo.svg",
   },
 };
 export default function RootLayout({

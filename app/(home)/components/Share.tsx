@@ -9,7 +9,6 @@ import {
   shareIcon,
   twitterIcon,
 } from "@/app/Base/SVG";
-import Link from "next/link";
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -66,25 +65,25 @@ export default function Share({
           >
             <FacebookShareButton
               title={name}
-              url={`https://cary.arealglam.com/catalog/${id}`}
+              url={`https://react-social-kappa.vercel.app/product/${id}`}
             >
               <span>{facebookIcon} </span> facebook
             </FacebookShareButton>
             <PinterestShareButton
-              url={`https://cary.arealglam.com/catalog/${id}`}
-              media={`https://cary.arealglam.com${imageUrl}`}
+              url={`https://react-social-kappa.vercel.app/product/${id}`}
+              media={`https://react-social-kappa.vercel.app${imageUrl}`}
             >
               <span>{pinterestIcon} </span> Pinterest
             </PinterestShareButton>
             <TwitterShareButton
               title={name}
-              url={`https://cary.arealglam.com/catalog/${id}`}
+              url={`https://react-social-kappa.vercel.app/product/${id}`}
             >
               <span>{twitterIcon}</span>
               twitter
             </TwitterShareButton>
             <EmailShareButton
-              url={`https://cary.arealglam.com/catalog/${id}`}
+              url={`https://react-social-kappa.vercel.app/product/${id}`}
               subject={name}
             >
               <span>{mailIcon}</span>
@@ -94,7 +93,7 @@ export default function Share({
               type="button"
               onClick={() => {
                 navigator.clipboard.writeText(
-                  `https://cary.arealglam.com/catalog/${id}`
+                  `https://react-social-kappa.vercel.app/product/${id}`
                 );
                 setActive(false);
               }}
