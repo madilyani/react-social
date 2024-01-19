@@ -1,0 +1,130 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 0;
+  border-bottom: 1px solid #e0e3ea;
+  z-index: 10;
+  .auto__container {
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-logo {
+      width: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 50px;
+      img {
+        width: 100%;
+      }
+    }
+    &-link {
+      padding: 12px 22px;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 500;
+      color: $black;
+      border-radius: 50px;
+      display: block;
+      text-transform: uppercase;
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.active {
+        background: $black;
+        color: $white;
+      }
+    }
+    &-row {
+      display: flex;
+      align-items: center;
+      .userPop {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+.userPop {
+  position: relative;
+  &__menu {
+    position: absolute;
+    top: 100%;
+    right: -5px;
+    min-width: 216px;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 50px 95px 135px rgba(122, 119, 137, 0.44);
+    background-color: $white;
+    box-sizing: border-box;
+    margin-top: 10px;
+
+    &::before {
+      position: absolute;
+      bottom: 100%;
+      right: 22px;
+      width: 14px;
+      height: 14px;
+      border-top: 1px solid #d9d9d9;
+      border-right: 1px solid #d9d9d9;
+      border-top-right-radius: 4px;
+      content: "";
+      transform: translateY(7px) rotate(-45deg);
+      background-color: $white;
+    }
+    a,
+    button {
+      background: transparent;
+      font-family: $mainFont;
+      font-size: 16px;
+      line-height: 120%;
+      color: $black;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      @include transition;
+      cursor: pointer;
+      text-transform: capitalize;
+      svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+      }
+      &:hover {
+        opacity: 1;
+        color: $primary;
+      }
+    }
+    hr {
+      width: 100%;
+      height: 1px;
+      background-color: #e5e5e5;
+      margin: 14px 0;
+      position: relative;
+      transform: rotate(-0.6deg);
+      transform-origin: left;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e0e3ea;
+    border-radius: 60px;
+    color: #292d32;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
