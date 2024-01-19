@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import CustomSelect from "./CustomSelect";
 
 const productList = [
   {
@@ -35,13 +36,39 @@ const productList = [
     image: "/images/gallery/8.jpg",
   },
 ];
+const sortList = [
+  {
+    id: "1",
+    value: "A to Z",
+  },
+  {
+    id: "2",
+    value: "Z to A",
+  },
+  {
+    id: "3",
+    value: "B to A",
+  },
+];
 export default function Products() {
   return (
     <div className="product">
-      <div className="product__head">
-        <h2 className="sm">Our Products</h2>
-        <div className="productFilter">
-          <h6>Store By :</h6>
+      <div className="auto__container">
+        <div className="product__head">
+          <h2 className="sm">Our Products</h2>
+          <div className="productFilter">
+            <h6>Store By :</h6>
+            <CustomSelect
+              list={sortList}
+              selected={sortList[0]}
+              onChange={() => {}}
+            />
+          </div>
+        </div>
+        <div className="product__inner">
+          {productList.map((item, index) => {
+            return <ProductItem {...item} key={index} />;
+          })}
         </div>
       </div>
       <div className="product__inner">

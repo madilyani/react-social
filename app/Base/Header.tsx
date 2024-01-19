@@ -19,6 +19,7 @@ export default function Header() {
   const [modal, setModal] = useState<string | null>(null);
   const [logged, setLogged] = useState<boolean>(true);
   const [active, setActive] = useState(false);
+  const [headerMob, setHeaderMob] = useState(false);
   const wrapper = useRef<any>(null);
   useEffect(() => {
     const windowClick = (e: MouseEvent) => {
@@ -34,10 +35,29 @@ export default function Header() {
   useEffect(() => {
     setActive(false);
   }, [pathname]);
+  useEffect(() => {
+    let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    window.addEventListener(
+      "scroll",
+      function handleScroll() {
+        const scrollTopPosition =
+          window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollTopPosition > lastScrollTop) {
+          setHeaderMob(true);
+        } else if (scrollTopPosition < lastScrollTop) {
+          setHeaderMob(false);
+        }
+        lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+      },
+      false
+    );
+  }, []);
 
   return (
     <>
-      <header className="header" ref={wrapper}>
+      <header className={"header " + (headerMob ? "active" : "")} ref={wrapper}>
         <div className="auto__container">
           <div className="header__inner">
             <div className="header__inner-row">
