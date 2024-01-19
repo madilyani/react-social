@@ -198,6 +198,7 @@
     }
   }
 }
+
 @mixin post-xlg-xxlg {
   .post {
     &__inner {
@@ -252,6 +253,23 @@
         justify-content: flex-end;
       }
       &__info {
+      }
+    }
+  }
+}
+@include height {
+  .post {
+    &Item {
+      &__btns {
+        margin-bottom: 0;
+      }
+      &__btn {
+        margin-bottom: 8px !important;
+      }
+      &.mobActive {
+        .postItem__info {
+          padding-bottom: 110px !important;
+        }
       }
     }
   }

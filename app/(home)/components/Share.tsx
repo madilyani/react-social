@@ -20,12 +20,13 @@ export default function Share({
   imageUrl,
   id,
   name,
+  wrapper,
 }: {
   id: any;
   name: string;
   imageUrl: any;
+  wrapper: any;
 }) {
-  const wrapper = useRef<any>(null);
   const [active, setActive] = useState(false);
   const [currentUrl, setCurrentUrl] = useState<string>("");
 

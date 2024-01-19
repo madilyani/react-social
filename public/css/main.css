@@ -415,6 +415,7 @@ p.sm {
       -ms-flex-align: center;
           align-items: center;
   text-transform: capitalize;
+  background: transparent;
 }
 .share__menu a:hover,
 .share__menu button:hover {
@@ -1106,6 +1107,17 @@ p.sm {
   height: 20px;
 }
 
+@media (max-height: 680px) {
+  .postItem__btns {
+    margin-bottom: 0;
+  }
+  .postItem__btn {
+    margin-bottom: 8px !important;
+  }
+  .postItem.mobActive .postItem__info {
+    padding-bottom: 110px !important;
+  }
+}
 .profile {
   padding: 50px 0;
 }

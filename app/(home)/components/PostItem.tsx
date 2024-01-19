@@ -7,7 +7,7 @@ import {
   userIcon,
 } from "@/app/Base/SVG";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import Share from "./Share";
 
 export default function PostItem(props: {
@@ -24,15 +24,19 @@ export default function PostItem(props: {
   isActive: any;
   setIsActive: any;
 }) {
+  const wrapper = useRef<any>(null);
+  const onClick = (e: React.MouseEvent<HTMLElement>) => {
+    if (!wrapper.current.contains(e.target)) {
+      if (props.isActive === props.id) props.setIsActive(null);
+      else {
+        props.setIsActive(props.id);
+      }
+    }
+  };
   return (
     <div
       className={"postItem " + (props.isActive === props.id ? "mobActive" : "")}
-      onClick={() => {
-        if (props.isActive === props.id) props.setIsActive(null);
-        else {
-          props.setIsActive(props.id);
-        }
-      }}
+      onClick={onClick}
     >
       <div className="postItem__image">
         <img src={props.image} alt="" />
@@ -43,7 +47,12 @@ export default function PostItem(props: {
             <span>{starIcon}</span>
             Like Product
           </button>
-          <Share imageUrl={props.image} id={props.id} name={props.title} />
+          <Share
+            wrapper={wrapper}
+            imageUrl={props.image}
+            id={props.id}
+            name={props.title}
+          />
           {/* <button type="button" className="postItem__btn">
             <span>{shareIcon}</span>
             Share
